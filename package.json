@@ -1,0 +1,30 @@
+{
+  "name": "text-manipulation",
+  "version": "0.1.0",
+  "description": "A set of text manipulation commands: escape/unscape, base64 encode/decode, convert between case styles, compute hashes, etc",
+  "repository": "https://github.com/extesy/atom-text-manipulation",
+  "license": "MIT",
+  "main": "./lib/text-manipulation",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+    "html-entities": "^1.1.2",
+    "string": "^3.0.0"
+  },
+  "keywords": [
+    "escape",
+    "unescape",
+    "urlencode",
+    "urldecode",
+    "convert",
+    "base64",
+    "hash",
+    "sha1",
+    "sha256",
+    "sha512",
+    "camelcase",
+    "slugify",
+    "html"
+  ]
+}

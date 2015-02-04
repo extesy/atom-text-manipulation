@@ -1,0 +1,31 @@
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'Text Manipulation'
+      'submenu': [
+        { 'label': 'Base64 Encode', 'command': 'text-manipulation:base64-encode' },
+        { 'label': 'Base64 Decode', 'command': 'text-manipulation:base64-decode' },
+        { 'label': 'HTML Encode', 'command': 'text-manipulation:html-encode' },
+        { 'label': 'HTML Decode', 'command': 'text-manipulation:html-decode' },
+        { 'label': 'XML Encode', 'command': 'text-manipulation:xml-encode' },
+        { 'label': 'XML Decode', 'command': 'text-manipulation:xml-decode' },
+        { 'label': 'Url Encode', 'command': 'text-manipulation:url-encode' },
+        { 'label': 'Url Decode', 'command': 'text-manipulation:url-decode' },
+        { 'label': 'Compute Hash', 'submenu': [
+          { 'label': 'MD5', 'command': 'text-manipulation:hash-md5' },
+          { 'label': 'SHA1', 'command': 'text-manipulation:hash-sha1' },
+          { 'label': 'SHA256', 'command': 'text-manipulation:hash-sha256' },
+          { 'label': 'SHA512', 'command': 'text-manipulation:hash-sha512' }
+        ]},
+        { 'label': 'String format', 'submenu': [
+          { 'label': 'Camelize', 'command': 'text-manipulation:format-camelize' },
+          { 'label': 'Dasherize', 'command': 'text-manipulation:format-dasherize' },
+          { 'label': 'Underscore', 'command': 'text-manipulation:format-underscore' },
+          { 'label': 'Slugify', 'command': 'text-manipulation:format-slugify' },
+          { 'label': 'Humanize', 'command': 'text-manipulation:format-humanize' },
+        ]}
+      ]
+    ]
+  }
+]
