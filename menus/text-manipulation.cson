@@ -18,12 +18,17 @@
           { 'label': 'SHA256', 'command': 'text-manipulation:hash-sha256' },
           { 'label': 'SHA512', 'command': 'text-manipulation:hash-sha512' }
         ]},
-        { 'label': 'String format', 'submenu': [
+        { 'label': 'String Format', 'submenu': [
           { 'label': 'Camelize', 'command': 'text-manipulation:format-camelize' },
           { 'label': 'Dasherize', 'command': 'text-manipulation:format-dasherize' },
           { 'label': 'Underscore', 'command': 'text-manipulation:format-underscore' },
           { 'label': 'Slugify', 'command': 'text-manipulation:format-slugify' },
-          { 'label': 'Humanize', 'command': 'text-manipulation:format-humanize' },
+          { 'label': 'Humanize', 'command': 'text-manipulation:format-humanize' }
+        ]},
+        { 'label': 'Whitespace Processing', 'submenu': [
+          { 'label': 'Trim', 'command': 'text-manipulation:whitespace-trim' },
+          { 'label': 'Collapse', 'command': 'text-manipulation:whitespace-collapse' },
+          { 'label': 'Strip Punctuation', 'command': 'text-manipulation:strip-punctuation' }
         ]}
       ]
     ]

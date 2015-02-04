@@ -24,6 +24,9 @@ module.exports =
     atom.commands.add 'atom-workspace', 'text-manipulation:format-underscore', => @convert @formatUnderscore
     atom.commands.add 'atom-workspace', 'text-manipulation:format-slugify', => @convert @formatSlugify
     atom.commands.add 'atom-workspace', 'text-manipulation:format-humanize', => @convert @formatHumanize
+    atom.commands.add 'atom-workspace', 'text-manipulation:whitespace-trim', => @convert @whitespaceTrim
+    atom.commands.add 'atom-workspace', 'text-manipulation:whitespace-collapse', => @convert @whitespaceCollapse
+    atom.commands.add 'atom-workspace', 'text-manipulation:strip-punctuation', => @convert @stripPunctuation
 
   convert: (converter) ->
     editor = atom.workspace.getActivePaneItem()
@@ -95,3 +98,13 @@ module.exports =
 
   formatHumanize: (text) ->
     string(text).humanize().s
+
+  whitespaceTrim: (text) ->
+    lines = (string(line).trim().s for line in text.split('\n'))
+    lines.join('\n')
+
+  whitespaceCollapse: (text) ->
+    string(text).collapseWhitespace().s
+
+  stripPunctuation: (text) ->
+    string(text).stripPunctuation().s
