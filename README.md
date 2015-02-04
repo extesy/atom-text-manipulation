@@ -7,9 +7,8 @@
 * Un/Escape selected HTML text
 * Un/Escape selected XML text
 * Un/Escape selected SQL text (not yet implemented)
-* Trim selected text
 * Remove all punctuation from the text
-* Trim all spaces in selected text (not yet implemented)
+* Trim all leading/trailing spaces in selected text, line by line
 * Remove all spaces in selected text (not yet implemented)
 * Encode selected text as URL
 * Convert selected text to camelCase, dash-case, underscore_case
