@@ -15,3 +15,5 @@
 * Generate hash for selected text: MD5, SHA1, SHA256, SHA512
 * De/Encode selected text to Base64
 * Remove empty lines (not yet implemented)
+
+This package was inspired by the incredibly useful IntelliJ Plugin [String Manipulation](https://plugins.jetbrains.com/plugin/2162).
