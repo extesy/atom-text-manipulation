@@ -26,6 +26,8 @@ module.exports =
     atom.commands.add 'atom-workspace', 'text-manipulation:format-humanize', => @convert @formatHumanize
     atom.commands.add 'atom-workspace', 'text-manipulation:whitespace-trim', => @convert @whitespaceTrim
     atom.commands.add 'atom-workspace', 'text-manipulation:whitespace-collapse', => @convert @whitespaceCollapse
+    atom.commands.add 'atom-workspace', 'text-manipulation:whitespace-remove', => @convert @whitespaceRemove
+    atom.commands.add 'atom-workspace', 'text-manipulation:whitespace-emptylines', => @convert @whitespaceEmptyLines
     atom.commands.add 'atom-workspace', 'text-manipulation:strip-punctuation', => @convert @stripPunctuation
 
   convert: (converter) ->
@@ -105,6 +107,13 @@ module.exports =
 
   whitespaceCollapse: (text) ->
     string(text).collapseWhitespace().s
+
+  whitespaceRemove: (text) ->
+    string(text).collapseWhitespace().s.replace(/\s+/g, '')
+
+  whitespaceEmptyLines: (text) ->
+    lines = (line for line in text.split('\n') when line.length > 0)
+    lines.join('\n')
 
   stripPunctuation: (text) ->
     string(text).stripPunctuation().s

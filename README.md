@@ -9,11 +9,11 @@
 * Un/Escape selected SQL text (not yet implemented)
 * Remove all punctuation from the text
 * Trim all leading/trailing spaces in selected text, line by line
-* Remove all spaces in selected text (not yet implemented)
+* Remove all whitespace in selected text
 * Encode selected text as URL
 * Convert selected text to camelCase, dash-case, underscore_case
 * Generate hash for selected text: MD5, SHA1, SHA256, SHA512
 * De/Encode selected text to Base64
-* Remove empty lines (not yet implemented)
+* Remove empty lines
 
 This package was inspired by the incredibly useful IntelliJ Plugin [String Manipulation](https://plugins.jetbrains.com/plugin/2162).

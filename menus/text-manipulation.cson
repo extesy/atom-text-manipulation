@@ -26,8 +26,10 @@
           { 'label': 'Humanize', 'command': 'text-manipulation:format-humanize' }
         ]},
         { 'label': 'Whitespace Processing', 'submenu': [
-          { 'label': 'Trim', 'command': 'text-manipulation:whitespace-trim' },
-          { 'label': 'Collapse', 'command': 'text-manipulation:whitespace-collapse' },
+          { 'label': 'Trim Leading/Trailing Spaces', 'command': 'text-manipulation:whitespace-trim' },
+          { 'label': 'Collapse Whitespace', 'command': 'text-manipulation:whitespace-collapse' },
+          { 'label': 'Remove All Whitespace', 'command': 'text-manipulation:whitespace-remove' },
+          { 'label': 'Remove Empty Lines', 'command': 'text-manipulation:whitespace-emptylines' },
           { 'label': 'Strip Punctuation', 'command': 'text-manipulation:strip-punctuation' }
         ]}
       ]
