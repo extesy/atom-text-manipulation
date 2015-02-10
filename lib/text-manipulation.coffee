@@ -13,6 +13,8 @@ module.exports =
     atom.commands.add 'atom-workspace', 'text-manipulation:html-decode', => @convert @decodeHtml
     atom.commands.add 'atom-workspace', 'text-manipulation:xml-encode', => @convert @encodeXml
     atom.commands.add 'atom-workspace', 'text-manipulation:xml-decode', => @convert @decodeXml
+    atom.commands.add 'atom-workspace', 'text-manipulation:sql-encode', => @convert @encodeSql
+    atom.commands.add 'atom-workspace', 'text-manipulation:sql-decode', => @convert @decodeSql
     atom.commands.add 'atom-workspace', 'text-manipulation:url-encode', => @convert @encodeUrl
     atom.commands.add 'atom-workspace', 'text-manipulation:url-decode', => @convert @decodeUrl
     atom.commands.add 'atom-workspace', 'text-manipulation:hash-md5', => @convert @hashMD5
@@ -59,6 +61,12 @@ module.exports =
 
   decodeXml: (text) ->
     xmlEntities.decode(text)
+
+  encodeSql: (text) ->
+    escape_sql(text)
+
+  decodeSql: (text) ->
+    unescape_sql(text)
 
   encodeUrl: (text) ->
     encodeURIComponent(text)
@@ -117,3 +125,35 @@ module.exports =
 
   stripPunctuation: (text) ->
     string(text).stripPunctuation().s
+
+# Helper functions
+
+escape_sql = (str) ->
+  str.replace(/[\0\b\t\n\r\\"'%\x1a]/g, (char) ->
+    switch char
+      when "\0" then "\\0"
+      when "\b" then "\\b"
+      when "\t" then "\\t"
+      when "\n" then "\\n"
+      when "\r" then "\\r"
+      when "\"" then "\\\""
+      when "'" then "\\'"
+      when "\\" then "\\\\"
+      when "%" then "\\%"
+      when "\x1a" then "\\z"
+  )
+
+unescape_sql = (str) ->
+  str.replace(/\\[0btnr"'\\%z]/g, (char) ->
+    switch char
+      when "\\0" then "\0"
+      when "\\b" then "\b"
+      when "\\t" then "\t"
+      when "\\n" then "\n"
+      when "\\r" then "\r"
+      when "\\\"" then "\""
+      when "\\'" then "'"
+      when "\\\\" then "\\"
+      when "\\%" then "%"
+      when "\\z" then "\x1a"
+  )

@@ -6,7 +6,7 @@
 * Un/Escape selected JavaScript text (not yet implemented)
 * Un/Escape selected HTML text
 * Un/Escape selected XML text
-* Un/Escape selected SQL text (not yet implemented)
+* Un/Escape selected SQL text
 * Remove all punctuation from the text
 * Trim all leading/trailing spaces in selected text, line by line
 * Remove all whitespace in selected text

@@ -10,6 +10,8 @@
         { 'label': 'HTML Decode', 'command': 'text-manipulation:html-decode' },
         { 'label': 'XML Encode', 'command': 'text-manipulation:xml-encode' },
         { 'label': 'XML Decode', 'command': 'text-manipulation:xml-decode' },
+        { 'label': 'SQL Encode', 'command': 'text-manipulation:sql-encode' },
+        { 'label': 'SQL Decode', 'command': 'text-manipulation:sql-decode' },
         { 'label': 'Url Encode', 'command': 'text-manipulation:url-encode' },
         { 'label': 'Url Decode', 'command': 'text-manipulation:url-decode' },
         { 'label': 'Compute Hash', 'submenu': [
