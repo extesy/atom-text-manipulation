@@ -1,7 +1,7 @@
 {
   "name": "text-manipulation",
   "version": "0.5.0",
-  "description": "A set of text manipulation commands: escape/unscape, base64 encode/decode, convert between case styles, compute hashes, etc",
+  "description": "A set of text manipulation commands: escape/unscape, convert tabs to spaces and back, base64 encode/decode, convert between case styles, compute hashes, etc",
   "repository": "https://github.com/extesy/atom-text-manipulation",
   "license": "MIT",
   "main": "./lib/text-manipulation",
