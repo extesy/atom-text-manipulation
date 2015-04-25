@@ -28,11 +28,13 @@
           { 'label': 'Humanize', 'command': 'text-manipulation:format-humanize' }
         ]},
         { 'label': 'Whitespace Processing', 'submenu': [
-          { 'label': 'Trim Leading/Trailing Spaces', 'command': 'text-manipulation:whitespace-trim' },
+          { 'label': 'Remove Trailing Whitespace', 'command': 'text-manipulation:whitespace-trim' },
           { 'label': 'Collapse Whitespace', 'command': 'text-manipulation:whitespace-collapse' },
           { 'label': 'Remove All Whitespace', 'command': 'text-manipulation:whitespace-remove' },
           { 'label': 'Remove Empty Lines', 'command': 'text-manipulation:whitespace-emptylines' },
-          { 'label': 'Strip Punctuation', 'command': 'text-manipulation:strip-punctuation' }
+          { 'label': 'Strip Punctuation', 'command': 'text-manipulation:strip-punctuation' },
+          { 'label': 'Convert Spaces To Tabs', 'command': 'text-manipulation:whitespace-tabify' },
+          { 'label': 'Convert Tabs To Spaces', 'command': 'text-manipulation:whitespace-untabify' }
         ]}
       ]
     ]

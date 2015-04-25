@@ -1,3 +1,6 @@
+## 0.5.0
+* Convert between tabs and spaces
+
 ## 0.4.0
 * Escape/unescape SQL
 

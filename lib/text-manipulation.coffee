@@ -30,10 +30,12 @@ module.exports =
     atom.commands.add 'atom-workspace', 'text-manipulation:whitespace-collapse', => @convert @whitespaceCollapse
     atom.commands.add 'atom-workspace', 'text-manipulation:whitespace-remove', => @convert @whitespaceRemove
     atom.commands.add 'atom-workspace', 'text-manipulation:whitespace-emptylines', => @convert @whitespaceEmptyLines
+    atom.commands.add 'atom-workspace', 'text-manipulation:whitespace-tabify', => @convert @whitespaceTabify
+    atom.commands.add 'atom-workspace', 'text-manipulation:whitespace-untabify', => @convert @whitespaceUntabify
     atom.commands.add 'atom-workspace', 'text-manipulation:strip-punctuation', => @convert @stripPunctuation
 
   convert: (converter) ->
-    editor = atom.workspace.getActivePaneItem()
+    editor = atom.workspace.getActiveTextEditor()
     selections = editor.getSelections()
     #if selections.length == 1 and selections[0].isEmpty
     #  editor.moveToFirstCharacterOfLine()
@@ -110,7 +112,7 @@ module.exports =
     string(text).humanize().s
 
   whitespaceTrim: (text) ->
-    lines = (string(line).trim().s for line in text.split('\n'))
+    lines = (string(line).replace(/\s+$/, "").s for line in text.split('\n'))
     lines.join('\n')
 
   whitespaceCollapse: (text) ->
@@ -123,10 +125,44 @@ module.exports =
     lines = (line for line in text.split('\n') when line.length > 0)
     lines.join('\n')
 
+  whitespaceTabify: (text) ->
+    editor = atom.workspace.getActiveTextEditor()
+    tabLength = editor.getTabLength()
+    lines = (tabify(line, tabLength) for line in text.split('\n'))
+    lines.join('\n')
+
+  whitespaceUntabify: (text) ->
+    editor = atom.workspace.getActiveTextEditor()
+    tabLength = editor.getTabLength()
+    lines = (untabify(line, tabLength) for line in text.split('\n'))
+    lines.join('\n')
+
   stripPunctuation: (text) ->
     string(text).stripPunctuation().s
 
 # Helper functions
+
+tabify = (str, tabLength) ->
+  [start, count] = countTabs(str, tabLength)
+  tabs = string('\t').repeat(count // tabLength).s
+  spaces = string(' ').repeat(count %% tabLength).s
+  tabs + spaces + str.substr(start)
+
+untabify = (str, tabLength) ->
+  [start, count] = countTabs(str, tabLength)
+  spaces = string(' ').repeat(count).s
+  spaces + str.substr(start)
+
+countTabs = (str, tabLength) ->
+  start = str.search(/[^\s]/)
+  if start < 0
+    start = str.length
+  count = 0
+  for ch in str.substr(0, start)
+    switch ch
+      when ' ' then count += 1
+      when '\t' then count = (count // tabLength + 1) * tabLength
+  [start, count]
 
 escape_sql = (str) ->
   str.replace(/[\0\b\t\n\r\\"'%\x1a]/g, (char) ->
