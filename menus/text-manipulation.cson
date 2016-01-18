@@ -27,6 +27,7 @@
           { 'label': 'Slugify', 'command': 'text-manipulation:format-slugify' },
           { 'label': 'Capitalize', 'command': 'text-manipulation:format-capitalize' },
           { 'label': 'Humanize', 'command': 'text-manipulation:format-humanize' },
+          { 'label': 'Sentence', 'command': 'text-manipulation:format-sentence' }
         ]},
         { 'label': 'Whitespace Processing', 'submenu': [
           { 'label': 'Remove Trailing Whitespace', 'command': 'text-manipulation:whitespace-trim' },
