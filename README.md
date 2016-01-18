@@ -7,7 +7,7 @@
 * Trim all trailing spaces in selected lines
 * Remove all whitespace in selected text
 * Encode selected text as URL
-* Convert selected text to camelCase, dash-case, underscore_case
+* Convert selected text to camelCase, dash-case, underscore_case, Sentence case, and Capitalized Text
 * Generate hash for selected text: MD5, SHA1, SHA256, SHA512
 * De/Encode selected text to Base64
 * Remove empty lines
