@@ -25,6 +25,7 @@ module.exports =
     atom.commands.add 'atom-workspace', 'text-manipulation:format-dasherize', => @convert @formatDasherize
     atom.commands.add 'atom-workspace', 'text-manipulation:format-underscore', => @convert @formatUnderscore
     atom.commands.add 'atom-workspace', 'text-manipulation:format-slugify', => @convert @formatSlugify
+    atom.commands.add 'atom-workspace', 'text-manipulation:format-capitalize', => @convert @formatCapitalize
     atom.commands.add 'atom-workspace', 'text-manipulation:format-humanize', => @convert @formatHumanize
     atom.commands.add 'atom-workspace', 'text-manipulation:whitespace-trim', => @convert @whitespaceTrim
     atom.commands.add 'atom-workspace', 'text-manipulation:whitespace-collapse', => @convert @whitespaceCollapse
@@ -110,6 +111,9 @@ module.exports =
 
   formatHumanize: (text) ->
     string(text).humanize().s
+
+  formatCapitalize: (text) ->
+    string(text).toLowerCase().replace /\b\w/g, (l) -> l.toUpperCase()
 
   whitespaceTrim: (text) ->
     lines = (string(line).replace(/\s+$/, "").s for line in text.split('\n'))

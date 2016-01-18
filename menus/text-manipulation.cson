@@ -25,7 +25,8 @@
           { 'label': 'Dasherize', 'command': 'text-manipulation:format-dasherize' },
           { 'label': 'Underscore', 'command': 'text-manipulation:format-underscore' },
           { 'label': 'Slugify', 'command': 'text-manipulation:format-slugify' },
-          { 'label': 'Humanize', 'command': 'text-manipulation:format-humanize' }
+          { 'label': 'Capitalize', 'command': 'text-manipulation:format-capitalize' },
+          { 'label': 'Humanize', 'command': 'text-manipulation:format-humanize' },
         ]},
         { 'label': 'Whitespace Processing', 'submenu': [
           { 'label': 'Remove Trailing Whitespace', 'command': 'text-manipulation:whitespace-trim' },
